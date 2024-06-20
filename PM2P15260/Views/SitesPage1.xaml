@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2P15260.Views.SitesPage1"
+             xmlns:conver="clr-namespace:PM2P15260.Controllers"
+             Title="Sitios">
+    
+    <ContentPage.Resources>
+        <conver:Base64ToImage x:Key="BaseString" />
+    </ContentPage.Resources>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="" IconImageSource="menu.png" Priority="0" Order="Primary" Clicked="OnMenuClicked"/>
+        <ToolbarItem Text="" IconImageSource="add_icon.png" Priority="0" Order="Primary" Clicked="OnAddClicked"/>
+        <ToolbarItem Text="" IconImageSource="map_icon.png" Priority="0" Order="Primary" Clicked="OnMapClicked"/>
+        <ToolbarItem Text="" IconImageSource="user_circle.png" Priority="1" Order="Primary" Clicked="OnLoginClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackLayout Grid.Row="0">
+            <SearchBar Placeholder="Buscar por descripción, longitud" TextChanged="OnSearchBarTextChanged"/>
+            <CollectionView x:Name="SitiosCollectionView" SelectionChanged="OnSitiosSelected">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems Mode="Reveal" >
+                                    <SwipeItem
+                                    Text=""
+                                    IconImageSource="edit_icon.png"
+                                    BackgroundColor="LightBlue"
+                                    Invoked="OnEditSwipeItemInvoked"/>
+                                    <SwipeItem 
+                                    Text=""
+                                    IconImageSource="remove_icon.png"
+                                    BackgroundColor="LightCoral"
+                                    Invoked="OnDeleteSwipeItemInvoked"/>
+                                    <SwipeItem 
+                                    Text="Ubi"
+                                    IconImageSource="remove_icon.png"
+                                    BackgroundColor="LightCoral"
+                                    Invoked="OnMapaSwipeItemInvoked"/>
+
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Frame HeightRequest="60"
+                               WidthRequest="60"
+                               CornerRadius="40"
+                               HorizontalOptions="Center"
+                               IsClippedToBounds="True"
+                               Padding="0"
+                               BackgroundColor="WhiteSmoke"
+                               BorderColor="Gray"
+                               Margin="0,0,0,0">
+
+                                    <Image Grid.Column="0"
+                                   x:Name="imagen"
+                                   Source="{Binding Foto, Converter={StaticResource BaseString}}"
+                                   Aspect="AspectFill"
+                                   HeightRequest="60"
+                                   WidthRequest="60" />
+
+                                </Frame>
+
+
+                                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="{Binding Descripcion}" />
+                                    <Label Text="{Binding Latitude}" />
+                                    <Label Text="{Binding Longitude}" />
+                                </StackLayout>
+
+
+                            </Grid>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+
+        <!-- Barra de herramientas inferior, solo de prueba -->
+        <Grid Grid.Row="1" Padding="5" ColumnSpacing="20" HeightRequest="60" BackgroundColor="Coral">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="" Grid.Column="0" ImageSource="add_icon.png" BackgroundColor="Coral" Opacity="50" Clicked="OnAddClicked"/>
+            <Button Text="" Grid.Column="1" ImageSource="map_icon.png" BackgroundColor="Coral" Clicked="OnMapClicked"/>
+            <Button Text="" Grid.Column="2" ImageSource="help_icon.png" BackgroundColor="Coral" Clicked="OnAyudaClicked"/>
+        </Grid>
+    </Grid>
+</ContentPage>

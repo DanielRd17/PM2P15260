@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2P15260.Views.EditPage1"
+             Title="Actualización">
+    <VerticalStackLayout>
+
+
+        <Image Source="{Binding Sitio.Foto}" 
+               HeightRequest="200" 
+               WidthRequest="200"  
+               Margin="20,0,20,0"
+               BackgroundColor="Azure"               
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"
+               
+               x:Name="FotoImageEntry"
+               />
+
+        <Button Text="Tomar Imagen" x:Name="btnfoto" Clicked="btnfoto_Clicked" Margin="40,0,40,0"/>
+
+        <Label Text="Descripcion" Margin="20,0,20,0" VerticalOptions="Start" HorizontalOptions="Start"/>
+        <Entry Text="{Binding Sitio.Descripcion}" Keyboard="Text" MaxLength="100" Margin="20,0,20,0" x:Name="DescripcionEntry"/>
+
+        <Label Text="Latitude" Margin="20,0,20,0" VerticalOptions="Start" HorizontalOptions="Start"/>
+        <Entry Text="{Binding Sitio.Latitude}" Keyboard="Text" MaxLength="100" Margin="20,0,20,0" x:Name="LatitudeEntry" />
+
+        <Label Text="Longitude" Margin="20,0,20,0" VerticalOptions="Start" HorizontalOptions="Start"/>
+        <Entry Text="{Binding Sitio.Longitude}" Keyboard="Text" MaxLength="100" Margin="20,0,20,0" x:Name="LongitudeEntry" />
+
+
+        <Button x:Name="btnSave" Text="Guardar" Background="BlueViolet"
+                Margin="40,0,40,0"
+                TextColor="White" Clicked="OnSaveClicked"/>
+        <Button x:Name="btnActualizar" Text="Actualizar" Background="BlueViolet"
+                Clicked="OnUpdateClicked"
+                Margin="40,0,40,5"
+                IsVisible="false"/>
+        <Button x:Name="btnEliminar" Text="Eliminar"  Background="BlueViolet"
+                Clicked="OnDeleteClicked" 
+                Margin="40,0,40,0"
+                IsVisible="false"/>
+    </VerticalStackLayout>
+</ContentPage>

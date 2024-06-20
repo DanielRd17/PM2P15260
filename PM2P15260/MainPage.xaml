@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:PM2P15260.Views"
+            x:Class="PM2P15260.MainPage"
+            FlyoutLayoutBehavior="SplitOnPortrait">
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Menu" 
+                     BackgroundColor="SandyBrown"  
+                     Padding="0"
+                     AbsoluteLayout.LayoutFlags="HeightProportional">
+            <StackLayout Padding="10" Spacing="5">
+                <Label Text="Menú" 
+                       FontAttributes="Bold" 
+                       FontSize="Large" 
+                       HorizontalOptions="Center"/>
+                <Button x:Name="btnPage1"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        Text="Sitios"
+                        CornerRadius="10"
+                        Clicked="btnPage1_Clicked">
+                </Button>
+                <Button x:Name="btnPage2"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        Text="Sitios"
+                        CornerRadius="10"
+                        Clicked="btnPage2_Clicked">
+                </Button>
+                <Label Text="Derechos reservados" 
+                       FontAttributes="Bold" 
+                       FontSize="Small"                        
+                       HorizontalOptions="Center"
+                       VerticalOptions="End"/>
+
+            </StackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <local:SitesPage1 Title="Sitios"/>
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>
