@@ -12,7 +12,6 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="" IconImageSource="menu.png" Priority="0" Order="Primary" Clicked="OnMenuClicked"/>
         <ToolbarItem Text="" IconImageSource="add_icon.png" Priority="0" Order="Primary" Clicked="OnAddClicked"/>
-        <ToolbarItem Text="" IconImageSource="map_icon.png" Priority="0" Order="Primary" Clicked="OnMapClicked"/>
         <ToolbarItem Text="" IconImageSource="user_circle.png" Priority="1" Order="Primary" Clicked="OnLoginClicked"/>
     </ContentPage.ToolbarItems>
 
@@ -37,14 +36,14 @@
                                     Invoked="OnEditSwipeItemInvoked"/>
                                     <SwipeItem 
                                     Text=""
-                                    IconImageSource="remove_icon.png"
+                                    IconImageSource="map_icon.png"
                                     BackgroundColor="LightCoral"
-                                    Invoked="OnDeleteSwipeItemInvoked"/>
+                                    Invoked="OnMapSwipeItemInvoked"/>
                                     <SwipeItem 
-                                    Text="Ubi"
+                                    Text=""
                                     IconImageSource="remove_icon.png"
-                                    BackgroundColor="LightCoral"
-                                    Invoked="OnMapaSwipeItemInvoked"/>
+                                    BackgroundColor="LightBlue"
+                                    Invoked="OnDeleteSwipeItemInvoked"/>
 
                                 </SwipeItems>
                             </SwipeView.RightItems>
@@ -100,7 +99,6 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button Text="" Grid.Column="0" ImageSource="add_icon.png" BackgroundColor="Coral" Opacity="50" Clicked="OnAddClicked"/>
-            <Button Text="" Grid.Column="1" ImageSource="map_icon.png" BackgroundColor="Coral" Clicked="OnMapClicked"/>
             <Button Text="" Grid.Column="2" ImageSource="help_icon.png" BackgroundColor="Coral" Clicked="OnAyudaClicked"/>
         </Grid>
     </Grid>

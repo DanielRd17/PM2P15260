@@ -114,13 +114,26 @@ public partial class SitesPage1 : ContentPage
 
     }
 
-    private void OnMapaSwipeItemInvoked(object sender, EventArgs e)
+    private void OnMapSwipeItemInvoked(object sender, EventArgs e)
     {
         var swipeItem = sender as SwipeItem;
         var sitio = swipeItem.BindingContext as Sitios;
-        if (sitio != null)
+
+        double latitud;
+        double longitud;
+
+        bool isLatitudValid = double.TryParse(sitio.Latitude, out latitud);
+        bool isLongitudValid = double.TryParse(sitio.Longitude, out longitud);
+
+        if (!isLatitudValid || !isLongitudValid)
         {
-            Navigation.PushAsync(new MapPage1(sitio, _databaseService));
+            DisplayAlert("Mensaje", "Error al convertir las coordenadas", "ok");
+        }
+        else
+        {
+            var page = new Views.MapPage1(latitud,longitud);
+            Navigation.PushAsync(page);
+           // Navigation.PushAsync(new MapPage1(latitud,longitud));
             //Navigation.PushAsync(page);
         }
     }

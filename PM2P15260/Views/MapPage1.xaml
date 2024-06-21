@@ -4,9 +4,14 @@
              x:Class="PM2P15260.Views.MapPage1"
              xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
              Title="Ubicación Geográfica">
-    <ContentPage.Content>
-        <Grid>
-            <maps:Map x:Name="MyMap" MapType="Street" />
-        </Grid>
-    </ContentPage.Content>
+    <StackLayout>
+        <maps:Map x:Name="map"
+                  MapType="Street"
+                  IsShowingUser="True"
+                  VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand" />
+        <Button Text="Capturar y Compartir"
+                Clicked="OnCaptureAndShareButtonClicked" />
+    </StackLayout>
+
 </ContentPage>
