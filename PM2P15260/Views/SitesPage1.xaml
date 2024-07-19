@@ -4,11 +4,11 @@
              x:Class="PM2P15260.Views.SitesPage1"
              xmlns:conver="clr-namespace:PM2P15260.Controllers"
              Title="Sitios">
-    
+
     <ContentPage.Resources>
         <conver:Base64ToImage x:Key="BaseString" />
     </ContentPage.Resources>
-    
+
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="" IconImageSource="menu.png" Priority="0" Order="Primary" Clicked="OnMenuClicked"/>
         <ToolbarItem Text="" IconImageSource="add_icon.png" Priority="0" Order="Primary" Clicked="OnAddClicked"/>
@@ -42,6 +42,11 @@
                                     <SwipeItem 
                                     Text=""
                                     IconImageSource="remove_icon.png"
+                                    BackgroundColor="LightBlue"
+                                    Invoked="OnDeleteSwipeItemInvoked"/>
+                                    <SwipeItem 
+                                    Text=""
+                                    IconImageSource="audio.png"
                                     BackgroundColor="LightBlue"
                                     Invoked="OnDeleteSwipeItemInvoked"/>
 
@@ -99,6 +104,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button Text="" Grid.Column="0" ImageSource="add_icon.png" BackgroundColor="Coral" Opacity="50" Clicked="OnAddClicked"/>
+            <Button Text="" Grid.Column="1" ImageSource="audio.png" BackgroundColor="Coral" Clicked="OnAudioRecordClicked"/>
             <Button Text="" Grid.Column="2" ImageSource="help_icon.png" BackgroundColor="Coral" Clicked="OnAyudaClicked"/>
         </Grid>
     </Grid>

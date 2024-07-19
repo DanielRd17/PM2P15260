@@ -16,6 +16,8 @@ public partial class SitesPage1 : ContentPage
    //     LoadSitios();
         
     }
+    private async void OnAudioRecordClicked(object sender, EventArgs e)
+    { }
 
     protected async override void OnAppearing()
     {

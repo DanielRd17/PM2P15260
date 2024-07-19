@@ -5,7 +5,6 @@
              Title="Actualización">
     <VerticalStackLayout>
 
-
         <Image Source="{Binding Sitio.Foto}" 
                HeightRequest="200" 
                WidthRequest="200"  
@@ -13,7 +12,6 @@
                BackgroundColor="Azure"               
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="CenterAndExpand"
-               
                x:Name="FotoImageEntry"
                />
 
@@ -28,7 +26,6 @@
         <Label Text="Longitude" Margin="20,0,20,0" VerticalOptions="Start" HorizontalOptions="Start"/>
         <Entry Text="{Binding Sitio.Longitude}" Keyboard="Text" MaxLength="100" Margin="20,0,20,0" x:Name="LongitudeEntry" />
 
-
         <Button x:Name="btnSave" Text="Guardar" Background="BlueViolet"
                 Margin="40,0,40,0"
                 TextColor="White" Clicked="OnSaveClicked"/>
@@ -40,5 +37,9 @@
                 Clicked="OnDeleteClicked" 
                 Margin="40,0,40,0"
                 IsVisible="false"/>
+        <Button x:Name="btnAudioRecord" Text="Grabar Audio" Background="BlueViolet"
+                Clicked="OnAudioRecordClicked"
+                Margin="40,0,40,0"
+                TextColor="White"/>
     </VerticalStackLayout>
 </ContentPage>

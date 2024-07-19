@@ -28,7 +28,8 @@ public partial class EditPage1 : ContentPage
         }
 
     }
-
+    private async void OnAudioRecordClicked(object sender, EventArgs e)
+    { }
     protected async override void OnAppearing()
     {
         base.OnAppearing();
